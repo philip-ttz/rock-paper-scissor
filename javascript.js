@@ -11,40 +11,40 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let choice = prompt("What is your choice");
-    return choice;
+    let returnchoice = choice.toLowerCase();
+    return returnchoice;
 }
 
 function playGame(anz){
     function playRound(humanChoice, computerChoice){
-        let humanChoice = humanChoice.toLowerCase();
         if(humanChoice === "rock"){
             if(computerChoice === "rock"){
                 console.log("Draw, you both chose rock");
             }else if(computerChoice === "paper"){
                 console.log("Loss, paper beats rock");
-                computerChoice++;
-            }else if(computerChoice === "scissor"){
+                computerScore++;
+            }else if(computerChoice === "scissors"){
                 console.log("Win, rock beats scissor");
-                humanChoice++;
+                humanScore++;
             }
         }else if(humanChoice === "paper"){
             if(computerChoice === "rock"){
                 console.log("Win, paper beats rock");
-                humanChoice++;
+                humanScore++;
             }else if(computerChoice === "paper"){
                 console.log("Draw, you both chose paper");
-            }else if(computerChoice === "scissor"){
+            }else if(computerChoice === "scissors"){
                 console.log("Loss, scissor beats paper");
-                computerChoice++;
+                computerScore++;
             }
-        }else if(humanChoice === "scissor"){
+        }else if(humanChoice === "scissors"){
             if(computerChoice === "rock"){
                 console.log("Loss, rock beats scissor");
-                computerChoice++;
+                computerScore++;
             }else if(computerChoice === "paper"){
                 console.log("Win, scissor beats paper");
-                humanChoice++;
-            }else if(computerChoice === "scissor"){
+                humanScore++;
+            }else if(computerChoice === "scissors"){
                 console.log("Draw, you both chose scissor");
             }
         }
@@ -53,9 +53,12 @@ function playGame(anz){
     let humanScore = 0;
     let computerScore = 0;
 
-    for(i=0,i++,i<anz){
-        playGame();
+    for(let i=0; i<anz; i++){
+        const humanSelection = getHumanChoice();
+        const copmuterSelection = getComputerChoice();      
+        playRound(humanSelection, copmuterSelection);
     }
+
     if(humanScore>computerScore){
         console.log("You win");
     }else if(humanScore<computerScore){
@@ -65,6 +68,4 @@ function playGame(anz){
     }
 }
 
-const humanSelection = getHumanChoice();
-const copmuterSelection = getComputerChoice();
-
+playGame(5);
