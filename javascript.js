@@ -3,6 +3,8 @@ const paperBtn=document.querySelector('.paper');
 const scissorBtn=document.querySelector('.scissor');
 const gameModal=document.querySelector('.game-modal');
 const playAgain=document.querySelector(".play-again");
+const humanscore=document.querySelector(".humanscore");
+const computerscore=document.querySelector(".computerscore");
 let computerScore=0;
 let humanScore=0;
 let winningScore=5;
@@ -39,27 +41,33 @@ function playRound(humanChoice, computerChoice){
         }else if(computerChoice === "paper"){
             console.log("Loss, paper beats rock");
             computerScore++;
+            computerscore.innerHTML=`<h3>Score ${computerScore}</h3>`;
         }else if(computerChoice === "scissor"){
             console.log("Win, rock beats scissor");
             humanScore++;
+            humanscore.innerHTML=`<h3>Score ${humanScore}</h3>`;
         }
     }else if(humanChoice === "paper"){
         if(computerChoice === "rock"){
             console.log("Win, paper beats rock");
             humanScore++;
+            humanscore.innerHTML=`<h3>Score ${humanScore}</h3>`;
         }else if(computerChoice === "paper"){
             console.log("Draw, you both chose paper");
         }else if(computerChoice === "scissor"){
             console.log("Loss, scissor beats paper");
             computerScore++;
+            computerscore.innerHTML=`<h3>Score ${computerScore}</h3>`;
         }
     }else if(humanChoice === "scissor"){
         if(computerChoice === "rock"){
             console.log("Loss, rock beats scissor");
             computerScore++;
+            computerscore.innerHTML=`<h3>Score ${computerScore}</h3>`;
         }else if(computerChoice === "paper"){
             console.log("Win, scissor beats paper");
             humanScore++;
+            humanscore.innerHTML=`<h3>Score ${humanScore}</h3>`;
         }else if(computerChoice === "scissor"){
             console.log("Draw, you both chose scissor");
         }
@@ -88,4 +96,6 @@ function resetGame(){
     computerScore=0;
     console.log(humanScore, computerScore);
     gameModal.classList.remove('show');
+    humanscore.innerHTML=`<h3>Score ${humanScore}</h3>`;
+    computerscore.innerHTML=`<h3>Score ${computerScore}</h3>`;
 }

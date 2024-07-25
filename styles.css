@@ -27,3 +27,8 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.game-modal.show{
+    opacity: 1;
+    pointer-events: auto;
+}
