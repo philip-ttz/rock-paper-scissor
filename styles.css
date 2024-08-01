@@ -70,6 +70,14 @@ button:active .button{
     transform: translateY(0);
 }
 
+.heading{
+    background-color: slategray;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 0.7em 1.8em;
+    border-radius: 50px;
+}
+
 .game-modal{
     position: fixed;
     left: 0;

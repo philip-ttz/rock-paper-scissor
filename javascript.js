@@ -5,6 +5,7 @@ const gameModal=document.querySelector('.game-modal');
 const playAgain=document.querySelector(".play-again");
 const humanscore=document.querySelector(".humanscore");
 const computerscore=document.querySelector(".computerscore");
+const computerbox=document.querySelector(".computer-box");
 let computerScore=0;
 let humanScore=0;
 let winningScore=5;
@@ -24,10 +25,13 @@ playAgain.addEventListener('click', resetGame)
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
     if (choice==0){
+        computerbox.innerHTML="<h4>Rock</h4>";
         return "rock";
     } else if(choice==1){
+        computerbox.innerHTML="<h4>Paper</h4>";
         return "paper";
     } else {
+        computerbox.innerHTML="<h4>Scissor</h4>";
         return "scissor";
     }
 }
