@@ -127,3 +127,32 @@ button:active .button{
     opacity: 1;
     pointer-events: auto;
 }
+
+.game-modal .content{
+    background-color: white;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.game-modal h4{
+    font-size: 1.53rem;
+}
+
+.game-modal p{
+    font-size: 1.53rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+
+.game-modal p b{
+    color: burlywood;
+    font-weight: 600;
+}
+
+.game-modal button{
+    padding: 12px 23px;
+    background-color: #00a8ff;
+}
