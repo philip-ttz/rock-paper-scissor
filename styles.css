@@ -2,23 +2,46 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inter','Courier New', Courier, monospace;
 }
 
-*, *:before, *:after{
+*, *::before, *::after{
     box-sizing: inherit;
+}
+
+:root{
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+@supports (font-variation-settings: normal){
+    :root{font-family: InterVariable,sans-serif;}
 }
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 10px;
 }
 
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
+    background-color: #2f3640;
+    width: 100vw;
+}
+
+.title{
+    font-size: 32px;
+    color: #00a8ff;
+}
+
 .first{
     width: 100vw;
-    height: 100vh;
+    height: 86vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,11 +58,11 @@ body{
 }
 
 .human-side{
-    background-color: cornflowerblue;
+    background-color: #273c75;
 }
 
 .computer-side{
-    background-color: indianred;
+    background-color: #7f8fa6;
 }
 
 .playing-box button{
@@ -48,6 +71,15 @@ body{
     border: none;
     border-radius: 0.75em;
     background-color: #000000;
+}
+
+.computer-box button{
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.75em;
+    background-color: #000000;
+    pointer-events: none;
 }
 
 .button{

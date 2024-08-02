@@ -25,13 +25,13 @@ playAgain.addEventListener('click', resetGame)
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
     if (choice==0){
-        computerbox.innerHTML="<h4>Rock</h4>";
+        computerbox.innerHTML="<button><span class='button computerbtn'>Rock</span></button>";
         return "rock";
     } else if(choice==1){
-        computerbox.innerHTML="<h4>Paper</h4>";
+        computerbox.innerHTML="<button><span class='button computerbtn'>Paper</span></button>";
         return "paper";
     } else {
-        computerbox.innerHTML="<h4>Scissor</h4>";
+        computerbox.innerHTML="<button><span class='button computerbtn'>Scissor</span></button>";
         return "scissor";
     }
 }
